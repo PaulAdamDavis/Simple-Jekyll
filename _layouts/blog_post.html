@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<article{% if page.image %} class="hasImage" {% endif %}>
+    <h1 class="title">{{page.title}}</h1>
+    {% if page.image %}  
+        <figure class="polaroid post">
+            <img src="{{ page.image }}">
+            {% if page.imageCaption %}<figcaption>{{ page.imageCaption | markdownify }}</figcaption>{% endif %}
+        </figure>
+    {% endif %}
+    {{ content }}
+</article>
+
+<div class="nextPrev">
+
+	{% if page.previous %} 
+	    <a class="prev" href="{{page.previous.url}}" title="Previous Post: {{page.previous.title}}">&laquo; {{page.previous.title}} <span>Older - <time>{{ page.previous.date | date: "%D" }}</time></span></a> 
+	{% endif %} 
+
+	{% if page.next %} 
+	    <a class="next" href="{{page.next.url}}" title="next Post: {{page.next.title}}">{{page.next.title}} &raquo; <span> - Newer <time>{{ page.next.date | date: "%D" }}</time></span></a> 
+	{% endif %}
+
+</div>

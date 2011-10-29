@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US"> 
+<head>
+
+    <!-- Meta Tags & Browser Stuff -->
+    <meta charset="UTF-8" />
+	<meta name="viewport" content="user-scalable=yes, width=device-width" />
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <link rel="canonical" href="http://example.com{{ page.url | replace:'index.html','' }}" />
+    <title>{% if page.title %} {{ page.title }} | {% endif %}Site Title</title>
+    {% if page.meta-description %}<meta name="description" content="{{ page.meta-description }}" />{% endif %}
+    
+    <!-- Make the HTML5 elements work in IE. -->
+    <!--[if IE]>
+        <script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- CSS -->
+    <link rel="stylesheet/less" href="/css/style.less" />
+    <script src="/js/less.js"></script>
+    <!-- link rel="stylesheet" href="/css/style.css" / -->
+
+</head>
+<body id="{{ page.title | downcase | replace:' ','-' }}-page">
+	  
+    <header>
+    	<a href="/" id="logo">Site Name</a>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog/"{% if page.url contains '/blog/' %} class="active"{% endif %}>Blog</a></li>
+                <li><a href="/about/"{% if page.url contains '/about/' %} class="active"{% endif %}>About</a></li>
+            </ul>
+        </nav>
+    </header>
+	
+    <div class="wrapper">
+        	
+		{{ content }}
+
+    </div><!-- end .wrapper -->    
+
+</body>
+</html>
