@@ -16,9 +16,7 @@
     <![endif]-->
 
     <!-- CSS -->
-    <link rel="stylesheet/less" href="/css/style.less" />
-    <script src="/js/less.js"></script>
-    <!-- link rel="stylesheet" href="/css/style.css" / -->
+    <link rel="stylesheet" href="/css/style.css" />
 
 </head>
 <body id="{{ page.title | downcase | replace:' ','-' }}-page">
@@ -38,7 +36,11 @@
         	
 		{{ content }}
 
-    </div><!-- end .wrapper -->    
+    </div><!-- end .wrapper -->   	
+	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="/js/libs/jquery-1.7.1.js"><\/script>')</script>
+	<script src="/js/scripts.js"></script>
 
 </body>
 </html>
